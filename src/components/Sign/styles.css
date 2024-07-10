@@ -1,0 +1,70 @@
+/* https://colorhunt.co/palette/ff7b54ffb26bffd56f939b62 */
+
+:root {
+  background-color: #939b62;
+}
+
+.sign-component {
+  --primary-color: #ff7b54;
+  --secondary-color: #ffb26b;
+  --background-color: #ffd56f;
+  --text-color: #939b62;
+  --hover-color: #656b42;
+
+  min-width: 300px;
+  min-height: 600px;
+  border-radius: 35px;
+  margin: 10px;
+  background-color: var(--background-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .sign-title {
+    padding: 0px;
+    color: var(--text-color);
+
+    span {
+      font-size: 40px;
+    }
+  }
+
+  .sign-content {
+    min-width: 250px;
+    min-height: 200px;
+    color: var(--text-color);
+    background-color: unset;
+    border-radius: 10px;
+    margin: 10px;
+    border-width: 3px;
+    border-color: var(--primary-color);
+    text-align: center;
+    padding: 5px 15px;
+
+    &:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+    }
+  }
+
+  .sign-result {
+    min-width: 250px;
+    min-height: 50px;
+    color: var(--text-color);
+    background-color: unset;
+    border-radius: 10px;
+    margin: 10px;
+    border-width: 3px;
+    border-color: var(--primary-color);
+
+    text-align: center;
+    padding: 5px 15px;
+
+    &:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+    }
+  }
+}
