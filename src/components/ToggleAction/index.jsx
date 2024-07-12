@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
 import "./styles.css";
 
-const ToggleAction = ({ setIsSign }) => {
+const ToggleAction = ({ isSign, setIsSign }) => {
   return (
     <div className="toggle-component">
-      <button onClick={() => setIsSign(true)}>Sign</button>
-      <button onClick={() => setIsSign(false)}>Verify</button>
+      {!isSign ? (
+        <button onClick={() => setIsSign(true)}>Sign</button>
+      ) : (
+        <button onClick={() => setIsSign(false)}>Verify</button>
+      )}
     </div>
   );
 };
@@ -13,5 +16,6 @@ const ToggleAction = ({ setIsSign }) => {
 export default ToggleAction;
 
 ToggleAction.propTypes = {
+  isSign: PropTypes.bool,
   setIsSign: PropTypes.func,
 };

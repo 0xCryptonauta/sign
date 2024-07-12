@@ -11,11 +11,15 @@
   --text-color: #939b62;
   --hover-color: #656b42;
 
-  min-width: 300px;
-  min-height: 600px;
-  border-radius: 35px;
-  margin: 10px;
+  width: 300px;
+  height: 600px;
+  border-radius: 20px;
+  margin: 15px;
+  padding: 5px;
   background-color: var(--background-color);
+
+  position: relative;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -29,6 +33,7 @@
     span {
       font-size: 40px;
     }
+    z-index: 1;
   }
 
   .sign-content {
@@ -37,16 +42,30 @@
     color: var(--text-color);
     background-color: unset;
     border-radius: 10px;
-    margin: 10px;
+
     border-width: 3px;
     border-color: var(--primary-color);
     text-align: center;
     padding: 5px 15px;
+    z-index: 1;
 
     &:focus {
       outline: none;
       border-color: var(--secondary-color);
     }
+  }
+
+  .sign-template-fill {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    padding-right: 6px;
+    color: var(--text-color);
+  }
+
+  .sign-button {
+    z-index: 1;
+    margin: 5px;
   }
 
   .sign-result {
@@ -61,6 +80,7 @@
 
     text-align: center;
     padding: 5px 15px;
+    z-index: 1;
 
     &:focus {
       outline: none;
@@ -68,3 +88,31 @@
     }
   }
 }
+
+/* @keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sign-component::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, rgb(8, 237, 69), rgb(4, 2, 4));
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+.sign-component::after {
+  content: "";
+  position: absolute;
+  background-color: var(--background-color);
+  inset: 5px;
+  border-radius: 15px;
+} */

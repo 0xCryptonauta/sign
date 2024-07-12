@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Header />
-      <ToggleAction setIsSign={setIsSign} />
+      <ToggleAction isSign={isSign} setIsSign={setIsSign} />
       <div>{isSign ? <Sign /> : <VerifySign />}</div>
     </>
   );

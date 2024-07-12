@@ -1,4 +1,4 @@
-import { createConfig, http } from "@wagmi/core";
+import { createConfig } from "@wagmi/core";
 import {
   mainnet,
   sepolia,
@@ -26,9 +26,9 @@ export const config = createConfig({
       },
     }),
   ],
-  transports: {
+  /*   transports: {
     [mainnet.id]: http(),
     [sepolia.id]: http(),
     [polygon.id]: http(),
-  },
+  }, */
 });

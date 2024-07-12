@@ -8,7 +8,9 @@ function Header() {
   return (
     <header className="sign-header">
       <div className="header-title">
-        <span>inBytes.xyz</span>{" "}
+        <span>
+          <h1>Signature</h1>
+        </span>{" "}
       </div>
 
       <div className="header-body">

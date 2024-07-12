@@ -13,7 +13,7 @@ function VerifySign() {
   return (
     <div className="sign-component">
       <div className="sign-title">
-        <span>Verify Sign</span>
+        <span>Verify Signature</span>
       </div>
       <textarea
         className="sign-result"
@@ -39,7 +39,7 @@ function VerifySign() {
         className="sign-result"
         value={sign}
         onChange={(e) => setSign(e.target.value)}
-        placeholder="Sign"
+        placeholder="Signature"
       />
 
       <button
