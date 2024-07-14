@@ -46,6 +46,7 @@
     border-width: 3px;
     border-color: var(--primary-color);
     text-align: center;
+    align-content: center;
     padding: 5px 15px;
     z-index: 1;
 
@@ -68,6 +69,14 @@
     margin: 5px;
   }
 
+  .sign-qrbutton {
+    background-color: white;
+    padding: 3px;
+    height: fit-content;
+    display: flex;
+    border-radius: 3px;
+  }
+
   .sign-result {
     min-width: 250px;
     min-height: 50px;
@@ -79,6 +88,7 @@
     border-color: var(--primary-color);
 
     text-align: center;
+    align-content: center;
     padding: 5px 15px;
     z-index: 1;
 

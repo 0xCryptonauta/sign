@@ -11,8 +11,10 @@ function App() {
   return (
     <>
       <Header />
-      <ToggleAction isSign={isSign} setIsSign={setIsSign} />
-      <div>{isSign ? <Sign /> : <VerifySign />}</div>
+      <div style={{ marginTop: "50px" }}>
+        <ToggleAction isSign={isSign} setIsSign={setIsSign} />
+        <div>{isSign ? <Sign /> : <VerifySign />}</div>
+      </div>
     </>
   );
 }

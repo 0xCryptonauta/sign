@@ -1,0 +1,7 @@
+.valid-signature {
+  border-color: green !important;
+}
+
+.invalid-signature {
+  border-color: red !important;
+}

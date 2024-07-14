@@ -12,6 +12,7 @@
   "dependencies": {
     "@wagmi/connectors": "^5.0.14",
     "@wagmi/core": "^2.11.2",
+    "qrcode": "^1.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "uuid": "^10.0.0",

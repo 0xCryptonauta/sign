@@ -1,4 +1,4 @@
-import { createConfig } from "@wagmi/core";
+import { createConfig, http } from "@wagmi/core";
 import {
   mainnet,
   sepolia,
@@ -22,13 +22,13 @@ export const config = createConfig({
       metadata: {
         name: "Sign & Verify",
         description: "Sign and verify any message",
-        url: "https://sign.inBytes.xyz",
+        /* url: "https://sign.inBytes.xyz", */
       },
     }),
   ],
-  /*   transports: {
+  transports: {
     [mainnet.id]: http(),
     [sepolia.id]: http(),
     [polygon.id]: http(),
-  }, */
+  },
 });

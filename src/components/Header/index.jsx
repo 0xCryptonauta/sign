@@ -9,7 +9,11 @@ function Header() {
     <header className="sign-header">
       <div className="header-title">
         <span>
-          <h1>Signature</h1>
+          <h1>
+            <a style={{ color: "white" }} href="https://inBytes.xyz">
+              inBytes
+            </a>
+          </h1>
         </span>{" "}
       </div>
 
