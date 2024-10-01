@@ -27,7 +27,7 @@ const projectId = "ebd0ab86ed45dcd28ff826b06b19eea1";
 const metadata = {
   name: "sign",
   description: "Sign intro",
-  url: "https://localhost:5173", // origin must match your domain & subdomain
+  url: "https://sign.inbytes.xyz", // origin must match your domain & subdomain
   icons: ["/IB_icon.png"],
 };
 
