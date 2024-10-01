@@ -1,7 +1,6 @@
-/* import { createConfig, http } from "@wagmi/core";
+import { createConfig, http } from "@wagmi/core";
 import { mainnet, sepolia, polygon, optimism } from "@wagmi/core/chains";
 import { injected, walletConnect } from "@wagmi/connectors";
-
 
 // 0. Setup queryClient
 //const queryClient = new QueryClient()
@@ -37,9 +36,9 @@ export const config = createConfig({
     [sepolia.id]: http(),
     [polygon.id]: http(),
   },
-}); */
+});
 
-import PropTypes from "prop-types"; // Import PropTypes
+/* import PropTypes from "prop-types"; // Import PropTypes
 
 import { WagmiProvider } from "wagmi";
 //import { optimism, mainnet, sepolia } from "@wagmi/core/chains";
@@ -117,4 +116,4 @@ export function AppKitProvider({ children }) {
 // Add PropTypes validation
 AppKitProvider.propTypes = {
   children: PropTypes.node.isRequired, // Validate that children is required and should be a React node
-};
+}; */

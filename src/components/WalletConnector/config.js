@@ -1,15 +1,6 @@
 import { createConfig, http } from "@wagmi/core";
+import { mainnet } from "@wagmi/core/chains";
 import { injected, walletConnect } from "@wagmi/connectors";
-import { optimism, mainnet, sepolia } from "@reown/appkit/networks";
-
-const optimism2 = {
-  ...optimism,
-  rpcUrls: {
-    default: {
-      http: ["https://mainnet.optimism.io"],
-    },
-  },
-};
 
 const mainnet2 = {
   ...mainnet,
@@ -20,24 +11,28 @@ const mainnet2 = {
   },
 };
 
-const networks = [mainnet2, optimism2, sepolia];
-
+// 1. Your Reown Cloud project ID
 const projectId = "ebd0ab86ed45dcd28ff826b06b19eea1";
 
+// 2. Create wagmiConfig
 const metadata = {
   name: "sign",
   description: "Sign intro",
-  url: "https://sign.inbytes.xyz", // origin must match your domain & subdomain
+  url: "https://sign.inbytes.xyz",
   icons: ["/IB_icon.png"],
 };
 
+const chains = [mainnet2];
+
 export const config = createConfig({
-  chains: networks,
+  chains: chains,
   connectors: [
     injected(),
     walletConnect({
       projectId: projectId,
+      customStoragePrefix: "wagmi",
       isNewChainsStale: false,
+      showQrModal: false,
       qrModalOptions: {
         themeMode: "dark",
       },
@@ -45,8 +40,6 @@ export const config = createConfig({
     }),
   ],
   transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
-    [optimism2.id]: http(),
+    [mainnet2.id]: http(),
   },
 });
