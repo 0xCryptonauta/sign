@@ -1,4 +1,5 @@
 //import { useState } from "react";
+import WalletButton from "../WalletButton";
 import "./styles.css";
 
 function Header() {
@@ -17,9 +18,7 @@ function Header() {
       </div>
 
       <div className="header-body">
-        {/* <WalletButton /> */}
-
-        <w3m-button size="sm" balance="hide" style={{ marginRight: "15px" }} />
+        <WalletButton />
       </div>
     </header>
   );

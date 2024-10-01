@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { verifyMessage } from "@wagmi/core";
-import { config } from "../WalletConnector";
+import { config } from "../WalletConnector/config";
 
 import "./styles.css";
 

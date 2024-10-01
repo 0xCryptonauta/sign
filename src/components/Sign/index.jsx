@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signMessage, getAccount } from "@wagmi/core";
-import { config } from "../WalletConnector";
+import { config } from "../WalletConnector/config";
 import { getChainId } from "@wagmi/core";
 import { v4 as uuidv4 } from "uuid";
 import QRCode from "qrcode";
