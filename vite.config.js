@@ -18,7 +18,7 @@ export default defineConfig({
         name: "Signature",
         short_name: "Sign",
         description: "Easy signature with wallet",
-        theme_color: "#ffffff",
+        theme_color: "#333333",
         id: "/",
         icons: [
           {
