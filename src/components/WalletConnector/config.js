@@ -6,13 +6,13 @@ const mainnet2 = {
   ...mainnet,
   rpcUrls: {
     default: {
-      http: ["https://eth.llamarpc.com"],
+      http: [import.meta.env.VITE_MAINNET_RPC],
     },
   },
 };
 
 // 1. Your Reown Cloud project ID
-const projectId = "ebd0ab86ed45dcd28ff826b06b19eea1";
+const projectId = import.meta.env.VITE_PROJECT_ID;
 
 // 2. Create wagmiConfig
 const metadata = {

@@ -24,7 +24,7 @@ const reconnectWallet = async () => {
         shimDisconnect: true,
       }),
       walletConnect({
-        projectId: "ebd0ab86ed45dcd28ff826b06b19eea1",
+        projectId: import.meta.env.VITE_PROJECT_ID,
       }),
     ],
   });
@@ -63,7 +63,7 @@ export const Wallet = () => {
   const connectWalletConnect = async () => {
     const currentUser = await connect(config, {
       connector: walletConnect({
-        projectId: "ebd0ab86ed45dcd28ff826b06b19eea1",
+        projectId: import.meta.env.VITE_PROJECT_ID,
       }),
     });
     console.log("Wallet result: ", currentUser);
