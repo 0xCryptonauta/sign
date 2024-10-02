@@ -1,6 +1,6 @@
 //import { useState } from "react";
 import { Wallet } from "../Wallet";
-import WalletButton from "../WalletButton";
+//import WalletButton from "../WalletButton";
 import "./styles.css";
 
 function Header() {
