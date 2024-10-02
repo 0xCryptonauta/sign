@@ -88,7 +88,6 @@ export const Wallet = () => {
         alignItems: "center",
         //border: "1px solid white",
         width: "fit-content",
-        height: "30px",
         padding: "3px",
         borderRadius: "7px",
         margin: "5px",
@@ -97,7 +96,7 @@ export const Wallet = () => {
     >
       <span>{shortenAddress(currentAddr)}</span>
       <img
-        src={connections[0]?.connector?.icon}
+        src={connections[0]?.connector?.icon || "./icons/WalletConnectIcon.svg"}
         width={25}
         height={25}
         style={{ marginLeft: "5px" }}
@@ -120,7 +119,7 @@ export const Wallet = () => {
         display: "flex",
         //border: "1px solid white",
         width: "fit-content",
-        height: "30px",
+
         padding: "3px",
         borderRadius: "7px",
         margin: "5px",
