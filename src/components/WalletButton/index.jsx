@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { connect, reconnect, disconnect } from "@wagmi/core";
+import { connect, reconnect, disconnect, getConnectors } from "@wagmi/core";
 import { injected, walletConnect } from "@wagmi/connectors";
 import { config } from "../WalletConnector/config";
 import { getAccount } from "@wagmi/core";
@@ -10,6 +10,10 @@ function truncateString(txt) {
 
 function WalletButton() {
   const [account, setAccount] = useState("");
+
+  const connectors = getConnectors(config);
+  //const currentConnector = connectors?.find((conn) => conn.id === walletId);
+  console.log("connectors:", connectors);
 
   const connectWallet = async () => {
     const result = await connect(config, { connector: injected() });
