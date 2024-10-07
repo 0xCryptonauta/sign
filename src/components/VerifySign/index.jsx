@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { verifyMessage } from "@wagmi/core";
 import { config } from "../WalletConnector/config";
 
 import "./styles.css";
+import QRScanner from "../QRScanner";
 
 const qrTemplate = {
   addr: "0x...",
   msg: "some content",
   signature: "0x...",
 };
+function verifyMsg(message) {
+  try {
+    const data = JSON.parse(message);
+    return data.addr && data.msg && data.signature;
+  } catch (error) {
+    return false;
+  }
+}
 
 function VerifySign() {
   const [addr, setAddr] = useState("");
@@ -19,21 +28,51 @@ function VerifySign() {
   const [isFillQrData, setIsFillQrData] = useState(false);
   const [showResult, setShowResult] = useState(false);
 
+  const [isScannerOpen, setIsScannerOpen] = useState(false);
+  const [scannedData, setScannedData] = useState("{}");
+
+  useEffect(() => {
+    if (scannedData != "{}") {
+      const jsonQrData = verifyMsg(scannedData)
+        ? JSON.parse(scannedData)
+        : {
+            addr: "QR NOT VALID",
+            msg: "QR NOT VALID",
+            signature: "SIGNATURE NOT VALID",
+          };
+
+      setAddr(jsonQrData.addr);
+      setMsg(jsonQrData.msg);
+      setSignature(jsonQrData.signature);
+    }
+  }, [scannedData]);
+
   return (
     <div className="sign-component">
       <div className="sign-title">
         <span>Verify Signature</span>
       </div>
-      {isFillQrData ? (
+      {isScannerOpen && (
+        <div>
+          <QRScanner
+            isScannerOpen={isScannerOpen}
+            setIsScannerOpen={setIsScannerOpen}
+            setScannedData={setScannedData}
+          />
+        </div>
+      )}
+      {isFillQrData && !isScannerOpen && (
         <div>
           <div>
-            <div
-              className="sign-template-fill"
-              style={{ paddingRight: "15px" }}
-            >
+            <div className="sign-template-fill" style={{ padding: "0px 15px" }}>
               <span
                 style={{ cursor: "pointer" }}
-                onClick={() => setIsFillQrData(false)}
+                onClick={() => {
+                  setIsFillQrData(false);
+                  setAddr("");
+                  setMsg("");
+                  setSignature("");
+                }}
               >
                 Fill data
               </span>
@@ -70,7 +109,8 @@ function VerifySign() {
             Validate
           </button>
         </div>
-      ) : (
+      )}
+      {!isScannerOpen && !isFillQrData && (
         <div
           style={{
             display: "flex",
@@ -79,10 +119,16 @@ function VerifySign() {
           }}
         >
           <div>
-            <div
-              className="sign-template-fill"
-              style={{ paddingRight: "15px" }}
-            >
+            <div className="sign-template-fill" style={{ padding: "0px 15px" }}>
+              {"BarcodeDetector" in window && (
+                <span
+                  onClick={() => setIsScannerOpen(true)}
+                  style={{ cursor: "pointer", fontSize: "20px" }}
+                >
+                  📸
+                </span>
+              )}
+
               <span
                 style={{ cursor: "pointer" }}
                 onClick={() => setIsFillQrData(true)}
