@@ -71,12 +71,12 @@ const QRScanner = ({ isScannerOpen, setIsScannerOpen, setScannedData }) => {
         streamRef.current = null; // Clear the stream reference
       }
     };
-  }, [isScannerOpen, setScannedData]); // Re-run effect when scanner toggles
+  }, [isScannerOpen, setScannedData, setIsScannerOpen]); // Re-run effect when scanner toggles
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       {isScannerOpen && (
-        <div style={{ width: "250px", height: "250px" }}>
+        <div style={{ maxWidth: "250px", maxHeight: "250px" }}>
           <video ref={videoRef} style={{ width: "100%" }}></video>
         </div>
       )}
@@ -87,6 +87,7 @@ const QRScanner = ({ isScannerOpen, setIsScannerOpen, setScannedData }) => {
           //border: "1px solid white",
           backgroundColor: "#939b62",
           borderRadius: "7px",
+          marginTop: "15px",
         }}
         onClick={() => setIsScannerOpen(!isScannerOpen)}
       >
