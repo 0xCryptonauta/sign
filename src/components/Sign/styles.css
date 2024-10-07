@@ -58,7 +58,7 @@
 
   .sign-template-fill {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     font-size: 12px;
     padding-right: 6px;
     color: var(--text-color);
